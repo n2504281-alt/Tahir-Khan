@@ -1,59 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tahir Khan — Restaurant Entrepreneur & Global Brand Founder</title>
-  <meta name="description" content="Official portfolio of Tahir Khan, founder of TKR (Tahir Khan Restaurant) - authentic Pakistani fine dining brand in Lahore, Bradford, and Riyadh.">
-  <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%2300d4aa%22 font-family=%22Montserrat%22 font-weight=%22bold%22>TK</text></svg>">
-  <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
-
-  <!-- Preloader -->
-  <div id="preloader">
-    <div class="preloader-logo">TKR<span>.</span></div>
-    <div class="preloader-tagline">Global Flavors · Pakistani Soul</div>
-  </div>
-
-  <!-- Custom Cursor Elements -->
-  <div class="custom-cursor"></div>
-  <div class="custom-cursor-dot"></div>
-
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="container navbar-container">
-      <a href="#home" class="logo">
-        <img src="assets/images/tkr_logo.jpg" alt="TKR Logo">
-        <span class="logo-text">TKR <span>Portfolio</span></span>
-      </a>
-      <ul class="nav-links">
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#locations">Locations</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <div class="nav-actions">
-        <form class="nav-search" id="searchForm" autocomplete="off">
-          <input type="text" class="nav-search-input" name="search" placeholder="Search..." autocomplete="off">
-          <button type="submit" class="nav-search-btn">Search</button>
-        </form>
-      </div>
-      <button class="mobile-nav-toggle">☰</button>
-    </div>
-  </nav>
-
-  <!-- Mobile Menu Overlay -->
-  <div class="mobile-nav-overlay">
-    <ul class="mobile-nav-links">
-      <li><a href="#home" class="active">Home</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#locations">Locations</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
+<?php get_header(); ?>
 
   <!-- Hero Section -->
   <section class="hero-section" id="home">
@@ -112,7 +57,7 @@
       <div class="hero-image-wrapper reveal active">
         <div class="hex-outer-frame">
           <div class="hex-inner-content">
-            <img src="assets/images/tahir_khan.jpg" alt="Tahir Khan Portrait">
+            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/tahir_khan.jpg" alt="Tahir Khan Portrait">
           </div>
         </div>
       </div>
@@ -171,7 +116,7 @@
         <div class="section-eyebrow">Vision & Heritage</div>
         <h2 class="section-title">About Tahir Khan</h2>
         <p>
-          Tahir Khan is the visionary founder and chef-patron of TKR Restaurants, delivering authentic Pakistani fine dining to the global stage. Originating from Khyber Pakhtunkhwa, his journey began with a passion for heritage wood-fire flavors, tender traditional clay pot cooking, and premium hospitalities.
+          Tahir Khan is the visionary founder and chef-patron of TKR Restaurants, delivering authentic Pakistani fine dining to the global stage. Originating from Khyber Pakhtunkhwa, his journey began with a passion for wood-fire flavors, traditional wood-cooked clay pots, and premium hospitality.
         </p>
         <p>
           His passion for authentic flavors and modern culinary excellence has built a brand trusted from Lahore to the UK and Saudi Arabia. Under his leadership, TKR has evolved into a symbol of premium hospitality, where traditional clay-oven grills meet high-end modern service design.
@@ -305,27 +250,4 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-container">
-      <div class="footer-copy">
-        © 2025 Tahir Khan Restaurant. All Rights Reserved.
-      </div>
-      <div class="social-hex-grid">
-        <a href="https://instagram.com" target="_blank" class="social-hex-icon" aria-label="Instagram">
-          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-        </a>
-        <a href="https://tripadvisor.com" target="_blank" class="social-hex-icon" aria-label="TripAdvisor">
-          <svg viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm0 18a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5.076-4.887A6.476 6.476 0 0 1 12 15a6.476 6.476 0 0 1-5.076-1.887l-.924.924C7.458 15.495 9.619 16.5 12 16.5s4.542-1.005 6.000-2.463l-.924-.924zM6 12a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm12 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg>
-        </a>
-        <a href="https://behance.net" target="_blank" class="social-hex-icon" aria-label="Behance">
-          <svg viewBox="0 0 24 24"><path d="M22 7h-7v1.5h7V7zm-11.233 4.252c.245-.25.394-.572.394-1.07 0-.583-.243-1.053-.787-1.325-.436-.217-1.127-.245-1.921-.245H5v7.202h3.407c1.077 0 1.954-.037 2.457-.354.595-.369.83-.935.83-1.572 0-.638-.344-1.144-.927-1.636zm-3.32-1.353h.97c.563 0 1.077.019 1.344.252.198.17.27.424.27.712 0 .321-.082.535-.296.67-.282.176-.79.186-1.385.186h-.903v-1.82zm2.664 4.092c-.282.204-.817.214-1.488.214h-1.176v-2.02h1.157c.69 0 1.15.01 1.42.195.234.16.326.438.326.75 0 .378-.073.666-.239.861zm10.742-1.53c.036-.37-.024-1.076-.484-1.564-.479-.508-1.258-.87-2.316-.87-2.091 0-3.385 1.547-3.385 3.528 0 2.222 1.439 3.593 3.657 3.593 1.83 0 2.875-.959 3.197-2.009h-1.64c-.21.437-.674.75-1.48.75-.92 0-1.583-.497-1.706-1.428h4.858zm-4.78-1.503c.125-.79.742-1.222 1.484-1.222.75 0 1.3.432 1.409 1.222H16.073zM12 24C5.373 24 0 18.627 0 12S5.373 0 12 0s12 5.373 12 12-5.373 12-12 12z"/></svg>
-        </a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="assets/js/main.js"></script>
-</body>
-</html>
+<?php get_footer(); ?>
