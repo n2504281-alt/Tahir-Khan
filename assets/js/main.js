@@ -178,4 +178,25 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // Hero Title Role Cycler
+  const heroRoleSpan = document.querySelector('.hero-title span');
+  if (heroRoleSpan) {
+    const roles = [
+      'Founder of TKR Restaurants',
+      'Hospitality Entrepreneur'
+    ];
+    let currentRoleIndex = 0;
+    
+    heroRoleSpan.style.transition = 'opacity 0.4s ease';
+    
+    setInterval(() => {
+      heroRoleSpan.style.opacity = '0';
+      setTimeout(() => {
+        currentRoleIndex = (currentRoleIndex + 1) % roles.length;
+        heroRoleSpan.textContent = roles[currentRoleIndex];
+        heroRoleSpan.style.opacity = '1';
+      }, 400);
+    }, 4000);
+  }
 });

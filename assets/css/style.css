@@ -525,6 +525,12 @@ h1, h2, h3, h4 {
   transition: var(--transition-smooth);
 }
 
+.social-hex-icon i {
+  font-size: 14px;
+  color: var(--color-accent);
+  transition: var(--transition-smooth);
+}
+
 .social-hex-icon:hover {
   background-color: var(--color-accent);
   transform: translateY(-2px);
@@ -534,45 +540,157 @@ h1, h2, h3, h4 {
   fill: var(--color-bg);
 }
 
-/* Hexagonal Portrait Photo Container */
+.social-hex-icon:hover i {
+  color: var(--color-bg);
+}
+
+/* ==========================================
+   PREMIUM PORTRAIT FRAME & DECORATIONS
+   ========================================== */
 .hero-image-wrapper {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  filter: drop-shadow(0 0 30px rgba(0, 212, 170, 0.25));
+  z-index: 5;
 }
 
-.hex-outer-frame {
+/* Background decorations behind the frame */
+.frame-decorations {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.decor-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(50px);
+  opacity: 0.2;
+}
+
+.circle-1 {
+  top: -10%;
+  right: -10%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, var(--color-accent) 0%, transparent 70%);
+}
+
+.circle-2 {
+  bottom: -15%;
+  left: -10%;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, #046A38 0%, transparent 70%);
+}
+
+.decor-ring {
+  position: absolute;
+  border: 1px solid rgba(186, 151, 90, 0.08); /* Gold accent rings with very low opacity */
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ring-1 {
+  width: 460px;
+  height: 460px;
+}
+
+.ring-2 {
+  width: 540px;
+  height: 540px;
+  border-style: dashed;
+}
+
+.decor-dots {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background-image: radial-gradient(rgba(0, 212, 170, 0.25) 1px, transparent 1px);
+  background-size: 12px 12px;
+  top: -5%;
+  left: 5%;
+  opacity: 0.6;
+}
+
+/* Floating & Scale hover structures */
+.premium-frame-hover-wrapper {
+  position: relative;
+  z-index: 2;
+  transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), filter 0.5s ease;
+}
+
+.premium-frame-hover-wrapper:hover {
+  transform: scale(1.03);
+  filter: drop-shadow(0 15px 35px rgba(0, 212, 170, 0.35)) drop-shadow(0 5px 15px rgba(170, 119, 28, 0.15));
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.premium-frame {
+  position: relative;
   width: 360px;
-  height: 410px;
-  background-color: var(--color-accent);
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  padding: 4px; /* Border gap */
+  height: 414px; /* 360 * 1.15 ratio */
+  max-width: 100%;
+  animation: float 6s ease-in-out infinite;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.hex-inner-content {
-  width: 100%;
-  height: 100%;
-  background-color: var(--color-bg-card);
+.frame-backdrop {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  background: rgba(18, 24, 38, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  position: relative;
-  overflow: hidden;
+  z-index: 1;
 }
 
-.hex-inner-content img {
+.frame-svg-overlay {
+  position: relative;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  transition: transform 0.6s;
+  z-index: 2;
+  overflow: visible;
 }
 
-.hex-outer-frame:hover .hex-inner-content img {
-  transform: scale(1.06);
+/* Inner elements transition */
+.portrait-img-svg {
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.premium-frame:hover .portrait-img-svg {
+  transform: scale(1.05);
+}
+
+.svg-glow-path {
+  transition: opacity 0.5s ease;
+}
+
+.premium-frame:hover .svg-glow-path {
+  opacity: 0.95;
 }
 
 /* ==========================================
@@ -617,6 +735,12 @@ h1, h2, h3, h4 {
   stroke-width: 2;
 }
 
+.service-card-icon i {
+  font-size: 26px;
+  color: var(--color-accent);
+  transition: var(--transition-smooth);
+}
+
 .service-card-title {
   font-size: 1.2rem;
   margin-bottom: var(--space-xs);
@@ -640,6 +764,10 @@ h1, h2, h3, h4 {
 
 .service-card:hover .service-card-icon svg {
   stroke: var(--color-bg);
+}
+
+.service-card:hover .service-card-icon i {
+  color: var(--color-bg);
 }
 
 /* ==========================================
@@ -762,6 +890,12 @@ h1, h2, h3, h4 {
 
 .location-details strong {
   color: var(--color-text);
+}
+
+.location-desc {
+  margin-top: 12px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
 }
 
 .location-card:hover {
