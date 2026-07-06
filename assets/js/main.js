@@ -86,15 +86,30 @@ document.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach(el => revealObserver.observe(el));
   }
 
-  // Active Nav Link — based on current page URL
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  // Active Nav Link — Scroll Spy
+  const sections = document.querySelectorAll('section');
   const navLinks = document.querySelectorAll('.nav-links a, .mobile-nav-links a');
-  navLinks.forEach(link => {
-    const href = link.getAttribute('href');
-    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
-      link.classList.add('active');
+
+  function changeActiveLink() {
+    let index = sections.length;
+    // 95px is the offset (sticky navbar height + extra padding)
+    while(--index && window.scrollY + 95 < sections[index].offsetTop) {}
+    
+    navLinks.forEach((link) => link.classList.remove('active'));
+    
+    if (sections[index]) {
+      const activeId = sections[index].getAttribute('id');
+      navLinks.forEach((link) => {
+        const href = link.getAttribute('href');
+        if (href === `#${activeId}`) {
+          link.classList.add('active');
+        }
+      });
     }
-  });
+  }
+
+  changeActiveLink();
+  window.addEventListener('scroll', changeActiveLink);
 
   // Contact Form Submission Handler
   const contactForm = document.getElementById('contactForm');
